@@ -28,7 +28,7 @@ class FlakephpTestsController extends FlakephpTestsAppController{
 			}
 		}
 		Configure::write('debug', 0);
-		echo json_encode($returnData);
+		echo json_encode($returnData);die;
 	}
 	
 	function afterFilter(){
