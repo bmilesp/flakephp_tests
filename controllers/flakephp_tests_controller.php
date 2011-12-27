@@ -8,7 +8,7 @@ class FlakephpTestsController extends FlakephpTestsAppController{
 		parent::beforeFilter();
 		
 		/*
-		$this->data['LoadCakeFixtures'] = array(
+		$this->data = array(
 			'app.match', 'app.played_hand', 'app.user', 'app.played_letter', 
 			'app.letter', 'app.letter_set', 'app.available_letter', 
 			'app.map', 'app.mapped_tile', 'app.matches_user', 'app.matchstatus' 
@@ -30,7 +30,7 @@ class FlakephpTestsController extends FlakephpTestsAppController{
 			}
 		}
 		Configure::write('debug', 0);
-		echo json_encode($returnData);die;
+		echo json_encode($returnData);
 	}
 	
 	function afterFilter(){
