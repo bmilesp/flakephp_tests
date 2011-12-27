@@ -2,20 +2,10 @@
 require_once CAKE_TESTS_LIB . 'cake_test_fixture.php';
 class FlakephpTestsAppController extends AppController{
 
-	function beforeFilter(){
-		$debug = Configure::read('debug');
-		$authAllow = Configure::read('FlakephpTests.authAllow');
-		$authAllow = ($authAllow === NULL || $authAllow === true)? true : false;
+	var $components = array('FlakephpTests.FlakephpTests');
 
-		if(!empty($this->Auth) && $authAllow == true){
-			$this->Auth->allow('*');
-		}
-		
-		$redirectUrl = Configure::read('FlakephpTests.redirectUrl');
-		if($debug < 1){
-			$redirectUrl = (!empty($redirectUrl))? $redirectUrl : '/';
-			$this->redirect('/');
-		}
+	function beforeFilter(){
+		$this->FlakephpTests->killAuthForTests();
 	}
 	
 	
