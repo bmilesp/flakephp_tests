@@ -7,12 +7,12 @@ class FlakephpTestsController extends FlakephpTestsAppController{
 	function beforeFilter(){
 		parent::beforeFilter();
 		
-		/*
+		
 		$this->data = array(
 			'app.match', 'app.played_hand', 'app.user', 'app.played_letter', 
 			'app.letter', 'app.letter_set', 'app.available_letter', 
 			'app.map', 'app.mapped_tile', 'app.matches_user', 'app.matchstatus' 
-		);*/
+		);
 		//debug($this->data);
 		
 		if (!empty($this->data)){

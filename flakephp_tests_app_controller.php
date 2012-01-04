@@ -33,6 +33,12 @@ class FlakephpTestsAppController extends AppController{
 					$fixture->create($this->db);
 					$fixture->insert($this->db);
 				} elseif (!in_array($table, $sources)) {
+					//removes fields in models that have primaryKey = false
+					foreach($fixture->fields as $key=>$field){
+						if(is_numeric($key)){
+							unset($fixture->fields[$key]);
+						}
+					} 
 					$fixture->create($this->db);
 					$fixture->insert($this->db);
 				}
